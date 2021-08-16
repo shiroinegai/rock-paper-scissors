@@ -4,8 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <script defer src="main.js"></script>
     <title>Rock Paper Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <div class="start">
+      <h1 class="title">Rock Paper Scissors</h1>
+      <button class="start-button">Start game</button>
+      <p>First to 5 wins claims victory!</p>
+    </div>
+    <div class="scoreboard hidden">
+      <div class="round">Round 1</div>
+      <div class="player-score">Player: 0</div>
+      <div class="cpu-score">CPU: 0</div>
+    </div>
+    <div class="play-area hidden">
+      <div class="player">Player</div>
+      <div class="cpu">CPU</div>
+      <div class="selections">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissors</button>
+      </div>
+      <div class="game-text">You win, x defeated y!</div>
+    </div>
+  </body>
 </html>
