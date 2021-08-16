@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Zen+Tokyo+Zoo&display=swap");
+
+:root {
+  font-size: clamp(16px, 2.5vw, 24px);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0f0f0f;
+}
+
+.hidden {
+  display: none;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.title {
+  background: linear-gradient(#ff1d1d, #ffffff, #0cc6ff);
+  background-clip: text;
+  background-size: 100%;
+  color: transparent;
+  font-family: "Zen Tokyo Zoo", sans-serif;
+  font-size: 4rem;
+  margin: 12vh 0;
+  text-transform: uppercase;
+}
+
+.start-button {
+  background: none;
+  border: none;
+  border-right: 0.5rem solid #ffff00;
+  color: #ffff00;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-left: auto;
+  padding: 0 0.5em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.start-button:hover,
+.start-button:focus {
+  border-right: 1.5rem solid #7bff00;
+  cursor: pointer;
+}
+
+.start p {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin-left: auto;
+  margin-right: 2em;
+}
