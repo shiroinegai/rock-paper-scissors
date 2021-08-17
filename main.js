@@ -15,12 +15,14 @@ playRound = (playerSelection, computerSelection = computerPlay()) => {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    console.log(`You win, ${playerSelection} defeated ${computerSelection}!`);
+    updateGameText(
+      `You win, ${playerSelection} defeated ${computerSelection}!`
+    );
     updatePlayerScore();
   } else if (playerSelection === computerSelection) {
-    console.log(`Both players picked ${computerSelection}, it's a tie!`);
+    updateGameText(`Both players picked ${computerSelection}, it's a tie!`);
   } else {
-    console.log(
+    updateGameText(
       `You lose, ${computerSelection} defeated ${playerSelection}...`
     );
     updateComputerScore();
@@ -72,3 +74,8 @@ scissors.addEventListener("click", (e) => {
   playRound("scissors");
   e.target.blur();
 });
+
+const gameText = document.querySelector(".game-text");
+updateGameText = (newGameText) => {
+  gameText.innerText = newGameText;
+};
