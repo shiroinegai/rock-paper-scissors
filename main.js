@@ -28,6 +28,17 @@ playRound = (playerSelection, computerSelection = computerPlay()) => {
     updateComputerScore();
   }
   updateRound();
+  if (playerScore === 5 || computerScore === 5) {
+    toggleVisibility(selectionsView);
+  }
+  if (playerScore === 5) {
+    replaceRoundText("Congrats");
+    updateGameText("You have claimed victory!");
+  }
+  if (computerScore === 5) {
+    replaceRoundText("Defeat");
+    updateGameText("Better luck next time!");
+  }
 };
 
 // UI
@@ -49,6 +60,9 @@ const roundNode = document.querySelector(".round");
 updateRound = () => {
   roundNode.innerText = `Round ${++round}`;
 };
+replaceRoundText = (newText) => {
+  roundNode.innerText = `${newText}`;
+};
 const playerScoreNode = document.querySelector(".player-score");
 updatePlayerScore = () => {
   playerScoreNode.innerText = `${++playerScore}`;
@@ -59,6 +73,7 @@ updateComputerScore = () => {
 };
 
 const playAreaView = document.querySelector(".play-area");
+const selectionsView = document.querySelector(".selections");
 const rock = document.querySelector(".rock");
 rock.addEventListener("click", (e) => {
   playRound("rock");
