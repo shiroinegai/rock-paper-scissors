@@ -131,6 +131,7 @@ body {
 
 .selections button:hover,
 .selections button:focus {
+  cursor: pointer;
   scale: 1.2;
 }
 

@@ -9,7 +9,7 @@ computerPlay = () => {
   return selections[Math.floor(Math.random() * 3)];
 };
 
-playRound = (playerSelection = "rock", computerSelection = computerPlay()) => {
+playRound = (playerSelection, computerSelection = computerPlay()) => {
   console.log(`Round ${++round}`);
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -29,26 +29,38 @@ playRound = (playerSelection = "rock", computerSelection = computerPlay()) => {
   }
 };
 
-game = () => {
-  while (playerScore < 5 && computerScore < 5) {
-    playRound();
-  }
-};
-
 // UI
 
 const startView = document.querySelector(".start");
-const scoreboardView = document.querySelector(".scoreboard");
-const playAreaView = document.querySelector(".play-area");
-
 const startButton = document.querySelector(".start-button");
 startButton.addEventListener("click", () => {
   toggleVisibility(startView);
   toggleVisibility(scoreboardView);
   toggleVisibility(playAreaView);
-  game();
 });
 
 toggleVisibility = (node) => {
   node.classList.toggle("hidden");
 };
+
+const scoreboardView = document.querySelector(".scoreboard");
+const roundNode = document.querySelector(".round");
+const playerScoreNode = document.querySelector(".player-score");
+const cpuScoreNode = document.querySelector(".cpu-score");
+
+const playAreaView = document.querySelector(".play-area");
+const rock = document.querySelector(".rock");
+rock.addEventListener("click", (e) => {
+  playRound("rock");
+  e.target.blur();
+});
+const paper = document.querySelector(".paper");
+paper.addEventListener("click", (e) => {
+  playRound("paper");
+  e.target.blur();
+});
+const scissors = document.querySelector(".scissors");
+scissors.addEventListener("click", (e) => {
+  playRound("scissors");
+  e.target.blur();
+});
