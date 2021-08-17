@@ -112,7 +112,7 @@ body {
 .player-score,
 .cpu-score {
   font-family: "Zen Tokyo Zoo", sans-serif;
-  font-size: 8rem;
+  font-size: 12rem;
   margin-top: -0.25em;
 }
 

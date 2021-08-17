@@ -3,30 +3,29 @@ console.log("Rock Paper Scissors is running.");
 // Game
 
 let selections = ["rock", "paper", "scissors"];
-let [round, playerScore, computerScore] = [0, 0, 0];
+let [round, playerScore, computerScore] = [1, 0, 0];
 
 computerPlay = () => {
   return selections[Math.floor(Math.random() * 3)];
 };
 
 playRound = (playerSelection, computerSelection = computerPlay()) => {
-  console.log(`Round ${++round}`);
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     console.log(`You win, ${playerSelection} defeated ${computerSelection}!`);
-    console.log(`Player: ${++playerScore} CPU: ${computerScore}`);
+    updatePlayerScore();
   } else if (playerSelection === computerSelection) {
     console.log(`Both players picked ${computerSelection}, it's a tie!`);
-    console.log(`Player: ${playerScore} CPU: ${computerScore}`);
   } else {
     console.log(
       `You lose, ${computerSelection} defeated ${playerSelection}...`
     );
-    console.log(`Player: ${playerScore} CPU: ${++computerScore}`);
+    updateComputerScore();
   }
+  updateRound();
 };
 
 // UI
@@ -45,8 +44,17 @@ toggleVisibility = (node) => {
 
 const scoreboardView = document.querySelector(".scoreboard");
 const roundNode = document.querySelector(".round");
+updateRound = () => {
+  roundNode.innerText = `Round ${++round}`;
+};
 const playerScoreNode = document.querySelector(".player-score");
+updatePlayerScore = () => {
+  playerScoreNode.innerText = `${++playerScore}`;
+};
 const cpuScoreNode = document.querySelector(".cpu-score");
+updateComputerScore = () => {
+  cpuScoreNode.innerText = `${++computerScore}`;
+};
 
 const playAreaView = document.querySelector(".play-area");
 const rock = document.querySelector(".rock");
