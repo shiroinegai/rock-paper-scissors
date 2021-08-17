@@ -29,6 +29,7 @@ body {
 .title {
   background: linear-gradient(#ff1d1d, #ffffff, #0cc6ff);
   background-clip: text;
+  -webkit-background-clip: text;
   background-size: 100%;
   color: transparent;
   font-family: "Zen Tokyo Zoo", sans-serif;
@@ -76,6 +77,7 @@ body {
 .round {
   background: linear-gradient(#ff1d1d, #ffffff, #0cc6ff);
   background-clip: text;
+  -webkit-background-clip: text;
   background-size: 100%;
   color: transparent;
   font-family: "Zen Tokyo Zoo", sans-serif;
